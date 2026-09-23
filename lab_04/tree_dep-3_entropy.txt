@@ -1,0 +1,10 @@
+|--- alcohol <= 10.85
+|   |--- volatile acidity <= 0.27
+|   |   |--- weights: [109.00, 238.00] class: Poor
+|   |--- volatile acidity >  0.27
+|   |   |--- weights: [15.00, 409.00] class: Poor
+|--- alcohol >  10.85
+|   |--- free sulfur dioxide <= 11.50
+|   |   |--- weights: [7.00, 33.00] class: Poor
+|   |--- free sulfur dioxide >  11.50
+|   |   |--- weights: [331.00, 70.00] class: Good
