@@ -1,0 +1,50 @@
+Python 3.12.14, pandas 2.2.3, numpy 2.3.5
+Method: execute each code cell in order in one fresh Python namespace.
+Original notebook: 3 cells, 2 code cells. No IPython-specific syntax.
+Unmodified original cell 1: FileNotFoundError: [Errno 2] No such file or directory: '/content/data/tanzanian-data/WaterPumps.csv'
+
+Original cell 1, paths adapted only: SUCCESS
+
+Saved text output matches reproduced text: True
+
+Original cell 3, paths adapted only: SUCCESS
+WaterPumps shape: (59400, 40)
+Labels shape: (59400, 2)
+Merged shape: (59400, 41)
+
+=== Column Summary (First 15 Columns) ===
+              Data Type  Missing Values  Percentage Missing (%)  Unique Values
+id                int64               0                    0.00          59400
+amount_tsh      float64               0                    0.00             98
+date_recorded    object               0                    0.00            356
+funder           object            3637                    6.12           1896
+gps_height        int64               0                    0.00           2428
+installer        object            3655                    6.15           2145
+longitude       float64               0                    0.00          57516
+latitude        float64               0                    0.00          57517
+wpt_name         object               2                    0.00          37399
+num_private       int64               0                    0.00             65
+basin            object               0                    0.00              9
+subvillage       object             371                    0.62          19287
+region           object               0                    0.00             21
+region_code       int64               0                    0.00             27
+district_code     int64               0                    0.00             20
+
+=== Target Variable Distribution ===
+status_group
+functional                 32259
+non functional             22824
+functional needs repair     4317
+Name: count, dtype: int64
+
+Saved text output matches reproduced text: True
+
+Input SHA-256:
+Data Description.pdf: 0c723860cb7f001fe54104f6b3f7bd96a12d3114c21508e020914f258c7ae419
+DataLabels.csv: dcce70c7013cc6fef07ee34fa4e65bcca016cd2cd2f8f82b3232aabdc312bce2
+Tanzanian_water_pump.ipynb: 8758fe0ad120f5f405e9bde901fe963521646c701bc914085e9f9e3fa3bfaf3f
+WaterPumps.csv: 5316166d2702614dcd467d31dba552e05ec80655c76605d2f5630463f7db8439
+
+Corrected notebook: 5 code cells executed successfully in order.
+Method: Python exec with a fresh shared namespace; outputs captured in notebook. No Jupyter kernel launch.
+Checks passed: 41 table columns, unchanged class counts, ID alignment, missing counts, date parsing, 1,812 coordinate pairs, 9 date conflicts.

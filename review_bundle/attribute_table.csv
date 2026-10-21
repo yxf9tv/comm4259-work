@@ -1,0 +1,42 @@
+attribute,pandas_dtype,description,attribute_type,notes,documentation_page,parsed_nulls,parsed_null_pct,unique_non_null,raw_empty_fields,raw_literal_None
+id,int64,Unique identifier for each waterpoint.,Nominal identifier (integer storage),"59,400 unique IDs. ID zero is valid as a key. Exclude the identifier from ordinary predictors.",,0,0.0,59400,0,0
+amount_tsh,float64,Total static head (amount water available to waterpoint).,Continuous measurement,"41,639 zeros (70.10%). The PDF does not define zero as missing or specify units. Keep float64.",2,0,0.0,98,0,0
+date_recorded,object,The date the row was entered.,Temporal date (day resolution),All dates parse with %m/%d/%Y. Range: 2002-10-14 to 2013-12-03. The PDF example uses ISO format.,2,0,0.0,356,0,0
+funder,object,Who funded the well.,nominal,"3,637 parsed nulls = 3,635 blanks + 2 literal None values. Also 777 literal 0 values and 4 Unknown values.",2,3637,6.1229,1896,3635,2
+gps_height,int64,Altitude of the well.,Continuous measurement,"20,438 zeros; 1,496 negative values; range -90 to 2,770. These values alone do not prove missing data.",2,0,0.0,2428,0,0
+installer,object,Organization that installed the well.,nominal,"3,655 blanks. Also 777 literal 0 values, 4 case-insensitive unknown values, and 3 hyphens. DWE and Dwe both occur.",2,3655,6.1532,2145,3655,0
+longitude,float64,GPS coordinate.,Continuous measurement,"1,812 zeros. These rows also have latitude -0.00000002. Flag the coordinate pair for review.",2,0,0.0,57516,0,0
+latitude,float64,GPS coordinate.,Continuous measurement,"No exact zeros. 1,812 values equal -0.00000002, paired with longitude zero. Suspected placeholders, not documented missing codes.",2,0,0.0,57517,0,0
+wpt_name,object,Name of the waterpoint if there is one.,nominal,"2 literal None values become null. Lowercase none remains a category in 3,563 rows; Unknown occurs 3 times.",2,2,0.0034,37399,0,2
+num_private,int64,No definition is supplied in the PDF.,Integer-valued; meaning undocumented,"65 distinct integer values; 58,643 zeros. Do not invent a definition from the column name.",2,0,0.0,65,0,0
+basin,object,Geographic water basin.,nominal,9 categories. No parsed nulls. This does not prove that all values are correct.,2,0,0.0,9,0,0
+subvillage,object,Geographic location.,nominal,"371 blanks; 19,287 distinct non-null values. High cardinality alone does not prove spelling errors.",2,371,0.6246,19287,371,0
+region,object,Geographic location.,nominal,21 categories. Region codes do not map consistently to names in this file.,2,0,0.0,21,0,0
+region_code,int64,Geographic location (coded).,coded nominal,"27 codes and 21 region names. Codes 5, 11, 14, 17, and 18 each map to two region names.",2,0,0.0,27,0,0
+district_code,int64,Geographic location (coded).,coded nominal,20 codes; 23 zeros. Codes repeat across geographic areas. Do not treat them as numerical magnitudes.,2,0,0.0,20,0,0
+lga,object,Geographic location.,nominal,125 distinct non-null values.,2,0,0.0,125,0,0
+ward,object,Geographic location.,nominal,"2,092 distinct non-null values.",2,0,0.0,2092,0,0
+population,int64,Population around the well.,Discrete count,"21,381 zeros (36.00%). The PDF does not define zero as missing.",2,0,0.0,1049,0,0
+public_meeting,object,True/False.,Binary nominal (Boolean with missing values),"3,334 blanks. Default pandas dtype is object because Boolean values coexist with nulls.",2,3334,5.6128,2,3334,0
+recorded_by,object,Group entering this row of data.,nominal,Constant: GeoData Consultants Ltd. No variation for prediction in this file.,2,0,0.0,1,0,0
+scheme_management,object,Who operates the waterpoint.,nominal,"3,878 parsed nulls = 3,877 blanks + 1 literal None value.",2,3878,6.5286,11,3877,1
+scheme_name,object,Who operates the waterpoint.,nominal,"28,810 parsed nulls (48.50%) = 28,166 blanks + 644 literal None values. Also 25 lowercase none values.",2,28810,48.5017,2695,28166,644
+permit,object,If the waterpoint is permitted.,Binary nominal (Boolean with missing values),"3,056 blanks. Default pandas dtype is object because Boolean values coexist with nulls.",3,3056,5.1448,2,3056,0
+construction_year,int64,Year the waterpoint was constructed.,Discrete temporal year,"20,709 zeros (34.86%). Nonzero range: 1960-2013. Nine records postdate their recording year; investigate.",3,0,0.0,55,0,0
+extraction_type,object,The kind of extraction the waterpoint uses.,nominal,18 categories. Each maps to one extraction_type_group in this file.,3,0,0.0,18,0,0
+extraction_type_group,object,The kind of extraction the waterpoint uses.,nominal,13 categories. Each maps to one extraction_type_class in this file.,3,0,0.0,13,0,0
+extraction_type_class,object,The kind of extraction the waterpoint uses.,nominal,7 categories. Coarser encoding of extraction_type_group in this file.,3,0,0.0,7,0,0
+management,object,How the waterpoint is managed.,nominal,561 explicit unknown values (0.94%); zero parsed nulls. Each category maps to one management_group.,3,0,0.0,12,0,0
+management_group,object,How the waterpoint is managed.,nominal,561 explicit unknown values; zero parsed nulls. Coarser encoding of management.,3,0,0.0,5,0,0
+payment,object,What the water costs.,nominal,"8,157 explicit unknown values (13.73%); zero parsed nulls. One-to-one category mapping with payment_type.",3,0,0.0,7,0,0
+payment_type,object,What the water costs.,nominal,"8,157 explicit unknown values (13.73%); zero parsed nulls. Categories describe payment arrangements, not numeric prices.",3,0,0.0,7,0,0
+water_quality,object,The quality of the water.,nominal,"1,876 explicit unknown values (3.16%); zero parsed nulls. Each maps to one quality_group.",3,0,0.0,8,0,0
+quality_group,object,The quality of the water.,nominal,"1,876 explicit unknown values; zero parsed nulls. Coarser encoding of water_quality.",3,0,0.0,6,0,0
+quantity,object,The quantity of water.,Nominal as supplied; unknown has no order,789 explicit unknown values (1.33%); zero parsed nulls. Identical to quantity_group in every row.,3,0,0.0,5,0,0
+quantity_group,object,The quantity of water.,Nominal as supplied; unknown has no order,Exact duplicate of quantity in this file.,3,0,0.0,5,0,0
+source,object,The source of the water.,nominal,66 explicit unknown values (0.11%); zero parsed nulls. Each category maps to one source_type.,3,0,0.0,10,0,0
+source_type,object,The source of the water.,nominal,7 categories. Each category maps to one source_class.,3,0,0.0,7,0,0
+source_class,object,The source of the water.,nominal,278 explicit unknown values (0.47%); zero parsed nulls.,3,0,0.0,3,0,0
+waterpoint_type,object,The kind of waterpoint.,nominal,7 categories. Each maps to one waterpoint_type_group. No specific error is established by this audit.,3,0,0.0,7,0,0
+waterpoint_type_group,object,The kind of waterpoint.,nominal,6 categories. Coarser encoding of waterpoint_type in this file.,3,0,0.0,6,0,0
+status_group,object,Operational without repairs; operational but needs repairs; or not operational.,target nominal,"32,259 functional; 22,824 non functional; 4,317 functional needs repair. No nulls. The last class remains operational.",5-6,0,0.0,3,0,0
