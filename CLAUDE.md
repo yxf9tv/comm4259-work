@@ -7,8 +7,20 @@ These rules apply to all COMM 4259 work: Labs 07-12, Assignments 2-5, and the pr
 - Give more detail only when the user asks.
 
 ## Folders
-- You may edit any folder in this repo when the task needs it.
+Course folder map (inside comm4259-work/):
+- `lab_NN/`: one folder per lab (older labs: `lab1/`, `lab2/`, `lab_03/`, `lab_04/`, `lab_05_06/`).
+- `assignment_NN/`: one folder per assignment (for example `assignment_02/`, with the app in `assignment_02/dashboard/`).
+- `project/`: the course project.
+
+Rules:
+- Create and edit files only in the folder named in my prompt. Do not change any other folder.
+- If the prompt names no folder, ask which folder before you change a file.
 - Change only the files that the task needs.
+
+## No generative AI sections
+- Do not help with any section marked "no generative AI". Do not write code, answers, or hints for it.
+- In Assignment 2 these are: Section 1, Part 2A, 2C.1, and 2C.3.
+- If I ask for help with such a section, say that it is a no-AI section and stop.
 
 ## When unsure
 - Ask one short question and wait for the answer.
@@ -32,9 +44,7 @@ These rules apply to all COMM 4259 work: Labs 07-12, Assignments 2-5, and the pr
 ## Override of global rules
 - For course work, notebook checks replace the TDD and 80% coverage rules in the global CLAUDE.md.
 
-## My own rules
-
-### Workflow Orchestration
+## My own rules & Workflow Orchestration:
 
 #### 1. Plan Node Default
 - Enter plan mode for ANY non-trivial task (3+ steps or architectural decisions).
@@ -47,6 +57,7 @@ These rules apply to all COMM 4259 work: Labs 07-12, Assignments 2-5, and the pr
 - Offload research, exploration, and parallel analysis to subagents.
 - For complex problems, throw more compute at it via subagents.
 - One tack per subagent for focused execution.
+- Use Opus to plan and for complex tasks and sonnet/haiku for the repetitive busy work to save tokens.
 
 #### 3. Self-Improvement Loop
 - After ANY correction from the user: update tasks/lessons.md with the pattern.
