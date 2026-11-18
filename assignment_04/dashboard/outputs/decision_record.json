@@ -1,0 +1,54 @@
+{
+  "analysis_id": "20261117-224527",
+  "saved_at": "2026-11-17 23:39:57",
+  "data_file": "WineQuality.csv",
+  "rows_in_file": 2700,
+  "target": "quality",
+  "positive_class": "Good",
+  "preparation_choices": {
+    "drop_dups": true,
+    "missing_rule": "Drop rows with missing values",
+    "outlier_rule": "Keep outliers",
+    "drop_cols": []
+  },
+  "preparation_steps_applied": {
+    "Duplicate rows": "removed 527",
+    "Missing values": "none found, no action needed",
+    "Outliers": "kept",
+    "Dropped columns": "none",
+    "Target": "Good = 1, everything else = 0"
+  },
+  "prepared_rows": 2173,
+  "input_columns": 11,
+  "testing_share": 0.3,
+  "random_state": 1,
+  "testing_rows": 652,
+  "cost_matrix": {
+    "TN": 0.0,
+    "FP": 20.0,
+    "FN": 0.0,
+    "TP": -12.0
+  },
+  "expected_cost_by_option": {
+    "Run 8: Support vector machine ({'C': 1.0})": -1756.0,
+    "Run 10: Random forest ({'n_estimators': 200, 'max_depth': 10})": -1572.0,
+    "Run 9: Neural network (MLP) ({'alpha': 0.0001})": -1568.0,
+    "Run 11: Bagging ({'n_estimators': 50})": -1500.0,
+    "Run 3: Hard voting (tree, KNN, logistic regression) (fixed settings)": -1392.0,
+    "Run 13: Hard voting (tree, KNN, logistic regression) (fixed settings)": -1392.0,
+    "Run 12: AdaBoost ({'n_estimators': 100, 'learning_rate': 1.0})": -1368.0,
+    "Run 2: Stacking (tree, KNN; logistic regression on top) (fixed settings)": -1332.0,
+    "Run 14: Stacking (tree, KNN; logistic regression on top) (fixed settings)": -1332.0,
+    "Run 7: Logistic regression ({'C': 1.0})": -1296.0,
+    "Run 6: K-nearest neighbor ({'n_neighbors': 5})": -1168.0,
+    "Run 1: Decision tree ({'max_depth': 5, 'min_samples_leaf': 1})": -984.0,
+    "Run 4: Decision tree ({'max_depth': 5, 'min_samples_leaf': 1})": -984.0,
+    "Run 5: Decision tree ({'max_depth': 5, 'min_samples_leaf': 1})": -984.0,
+    "Baseline: predict negative for everyone": 0.0,
+    "Baseline: predict positive for everyone": 5104.0
+  },
+  "lowest_cost_option": "Run 8: Support vector machine ({'C': 1.0})",
+  "recommended_run": "Run 8: Support vector machine ({'C': 1.0})",
+  "recommendation": "I would recommend the SVM model (C = 1.0), Run 8, because it had the lowest expected cost out of all the models we tested. On the testing data, it had a total expected cost of -$1,756, or -$2.69 per wine, meaning it actually generated a net benefit. This was much better than stocking every wine, which would cost $5,104, or stocking no wines, which would have a cost of $0. Overall, the SVM improved the outcome by $6,860 compared to stocking everything. One limitation is that it still made some incorrect predictions, including 31 false positives and 50 false negatives, so it isn't perfect.",
+  "model_runs_file": "model_runs.csv"
+}
